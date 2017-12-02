@@ -20,23 +20,27 @@ namespace Cheers
         public string BgColorString;
         public string TextColorString;
 
-        public Color BackgroundColor {
-            get {
+        public Color BackgroundColor
+        {
+            get
+            {
                 return ColorHelper.ByWeb(BgColorString);
             }
         }
 
-        public Color TextColor {
-            get {
+        public Color TextColor
+        {
+            get
+            {
                 return ColorHelper.ByWeb(TextColorString);
             }
         }
 
-        public See ()
+        public See()
         {
         }
 
-        public See (string title, string bgColorString = null, string textColorString = null) : this()
+        public See(string title, string bgColorString = null, string textColorString = null) : this()
         {
             Title = title;
             BgColorString = bgColorString;
@@ -47,13 +51,13 @@ namespace Cheers
     [AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = true)]
     public class FlagEnum : PropertyAttribute
     {
-    
+
     }
 
     [AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = true)]
     public class ReadOnly : PropertyAttribute
     {
-    
+
     }
 
     [AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = true)]
@@ -61,11 +65,30 @@ namespace Cheers
     {
         public string Text = "";
 
-        public Help (string text)
+        public Help(string text)
         {
             Text = text;
         }
 
         public bool IsExpanded;
+    }
+
+    [AttributeUsage(AttributeTargets.Field)]
+    public class EnumArray : PropertyAttribute
+    {
+        public Type enumType;
+        public string[] names;
+        public EnumArray(Type enumType)
+        {
+            if (!enumType.IsEnum)
+            {
+                Debug.LogError("must be enum type");
+            }
+            this.enumType = enumType;
+        }
+        public EnumArray(params string[] names)
+        {
+            this.names = names;
+        }
     }
 }

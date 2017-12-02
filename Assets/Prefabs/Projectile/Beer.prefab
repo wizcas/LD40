@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 136240784916294690}
   - component: {fileID: 54538711254873952}
   m_Layer: 8
-  m_Name: ThrownWine
+  m_Name: Beer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,6 +143,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breakFxPrefab: {fileID: 198112940913976510, guid: 7f7251863387fdd44983780e28186eae,
     type: 2}
+  takenMoney: 0
+  takenHealth: 0
+  takenSanity: 0
+  refuseMoney: 0
+  refuseHealth: 0
+  refuseSantiy: 0
+  owner: {fileID: 0}
 --- !u!114 &114968598712221290
 MonoBehaviour:
   m_ObjectHideFlags: 1

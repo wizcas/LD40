@@ -13,15 +13,26 @@ using UnityEngine;
 public class Projectile : MonoBehaviour 
 {
     public ParticleSystem breakFxPrefab;
+
+    public int takenMoney;
+    public int takenHealth;
+    public int takenSanity;
+    public int refuseMoney;
+    public int refuseHealth;
+    public int refuseSantiy;
+
+    public Guest owner;
     
     public void Break()
     {
         Instantiate(breakFxPrefab, transform.position, Quaternion.identity);
+        owner.OnRefused();
         Destroy(gameObject);
     }
 
     public void Take()
     {
+        owner.OnTaken();
         Destroy(gameObject);
     }
 }
