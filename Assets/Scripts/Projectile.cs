@@ -13,13 +13,8 @@ using UnityEngine;
 public class Projectile : MonoBehaviour 
 {
     public ParticleSystem breakFxPrefab;
-
-    private void OnMouseDown()
-    {
-        Break();
-    }
     
-    void Break()
+    public void Break()
     {
         Instantiate(breakFxPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);

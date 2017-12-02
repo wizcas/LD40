@@ -42,4 +42,18 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(1f);
         takenScreen.gameObject.SetActive(false);
     }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            if(Physics.SphereCast(Camera.main.ScreenPointToRay(Input.mousePosition), .1f, out hit, 5f, LayerMask.GetMask("Projectile")))
+            {
+                var proj = hit.collider.GetComponent<Projectile>();
+                if (proj != null)
+                    proj.Break();
+            }
+        }
+    }
 }
