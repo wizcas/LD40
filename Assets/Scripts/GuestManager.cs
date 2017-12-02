@@ -11,20 +11,88 @@ using UnityEngine;
 
 public class GuestManager : MonoBehaviour 
 {
-    SpriteRenderer[] renderers;
-    Camera cam;
-
     private void Awake()
     {
-        renderers = this.GetComponentsInAllChildren<SpriteRenderer>();
-        cam = Camera.main;
+        InitSpritesAndCam();
+        InitProjectors();
+    }
+
+    private void Start()
+    {
+        BeginAction();
     }
 
     private void Update()
     {
-        foreach(var rdr in renderers)
+        FaceCamera();
+        UpdateAction();
+    }
+
+    #region Face the Camera
+    SpriteRenderer[] _renderers;
+    Camera _cam;
+    void InitSpritesAndCam()
+    {
+        _renderers = this.GetComponentsInAllChildren<SpriteRenderer>();
+        _cam = Camera.main;
+    }
+    void FaceCamera()
+    {
+        foreach (var rdr in _renderers)
         {
-            rdr.transform.rotation = cam.transform.rotation;
+            rdr.transform.rotation = _cam.transform.rotation;
         }
     }
+    #endregion
+
+    #region Guest Action
+
+    public float actionInterval = 1;
+    public float startWait = 1f;
+    Projector[] _actors;
+    float _nextActionTime;
+    int _maxActorCount = 2;
+
+    void InitProjectors()
+    {
+        _actors = this.GetComponentsInAllChildren<Projector>();
+    }
+
+    void BeginAction()
+    {
+        _nextActionTime = Time.time + startWait;
+    }
+
+    void UpdateAction()
+    {
+        if(Time.time > _nextActionTime)
+        {
+            DoProject();
+            var wait = actionInterval * (1 + (Random.value - .5f) * 2);
+            PrettyLog.Log("<color=lime>wait: {0}s</color>", wait);
+            _nextActionTime = Time.time + wait;
+        }
+    }
+
+    void DoProject()
+    {
+        PrettyLog.Log("<color=yellow>do project</color>");
+        var pickedCount = Random.Range(0, _maxActorCount) + 1;
+        var totalCount = _actors.Length;
+
+        foreach(var actor in _actors)
+        {
+            var poss = (float)pickedCount / totalCount;
+            var rnd = Random.value;
+            if(rnd <= poss)
+            {
+                PrettyLog.Log("poss: {0}, rnd: {1}, pickedCount: {2}", poss, rnd, pickedCount);
+                pickedCount--;
+                actor.Toss();
+                if (pickedCount <= 0) return;
+            }
+            totalCount--;
+        }
+    }
+    #endregion
 }
