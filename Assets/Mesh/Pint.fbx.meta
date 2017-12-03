@@ -1,22 +1,35 @@
 fileFormatVersion: 2
-guid: 650e3a4cf04b48d47baaba05d5c172c6
-timeCreated: 1512210935
+guid: f1e2333048c772c4da3f39d1c0b8020c
+timeCreated: 1512277029
 licenseType: Pro
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Beer
+    100004: Pint
     400000: //RootNode
+    400002: Beer
+    400004: Pint
     2300000: //RootNode
+    2300002: Beer
+    2300004: Pint
     3300000: //RootNode
-    4300000: Plane
-    4300002: Wine
+    3300002: Beer
+    3300004: Pint
+    4300000: Pint
+    4300002: Beer
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: 6398b8498dee2ad468ee7a4a3f673d47, type: 2}
+      name: Beer
+    second: {fileID: 2100000, guid: 0e8f527a8c6e8b24d9d84058cfa74129, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: b933731bf7858194a8bee67b3bbc233d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -46,7 +59,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 30
+    globalScale: 15
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

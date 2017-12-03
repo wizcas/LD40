@@ -12,10 +12,13 @@ using UnityEngine;
 
 public class GuestManager : MonoBehaviour 
 {
+    List<Guest> _guests;
+    Camera _cam;
+
     private void Awake()
     {
-        InitSpritesAndCam();
-        InitProjectors();
+        InitGuests();
+        InitCam();
     }
 
     private void Start()
@@ -30,18 +33,15 @@ public class GuestManager : MonoBehaviour
     }
 
     #region Face the Camera
-    SpriteRenderer[] _renderers;
-    Camera _cam;
-    void InitSpritesAndCam()
+    void InitCam()
     {
-        _renderers = this.GetComponentsInAllChildren<SpriteRenderer>();
         _cam = Camera.main;
     }
     void FaceCamera()
     {
-        foreach (var rdr in _renderers)
+        foreach (var guest in _guests)
         {
-            rdr.transform.rotation = _cam.transform.rotation;
+            guest.transform.rotation = _cam.transform.rotation;
         }
     }
     #endregion
@@ -50,11 +50,12 @@ public class GuestManager : MonoBehaviour
 
     public float actionInterval = 1;
     public float startWait = 1f;
-    List<Guest> _guests;
+    public Projectile[] alcoholPrefabs;
+
     float _nextActionTime;
     int _maxActorCount = 2;
 
-    void InitProjectors()
+    void InitGuests()
     {
         _guests = this.GetComponentsInAllChildren<Guest>().ToList();
         foreach(var guest in _guests)
@@ -101,6 +102,7 @@ public class GuestManager : MonoBehaviour
             {
                 //PrettyLog.Log("poss: {0}, rnd: {1}, pickedCount: {2}", poss, rnd, pickedCount);
                 pickedCount--;
+                actor.projPrefab = alcoholPrefabs[Random.Range(0, alcoholPrefabs.Length)];
                 actor.Toss();
                 if (pickedCount <= 0) return;
             }

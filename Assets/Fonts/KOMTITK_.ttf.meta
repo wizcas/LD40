@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 737c13e60cb4b2848a4ec64a6aa6be96
+timeCreated: 1512273773
+licenseType: Pro
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Komika Title - Kaps
+  fontNames:
+  - Komika Title - Kaps
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

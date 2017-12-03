@@ -43,7 +43,14 @@ public class Guest : MonoBehaviour
     }
 
     [See]
-    public bool IsTalking { get { return bubble.IsTalking; } }
+    public bool IsTalking
+    {
+        get
+        {
+            if (bubble == null) return false;
+            return bubble.IsTalking;
+        }
+    }
 
     [See]
     public void Toss()
