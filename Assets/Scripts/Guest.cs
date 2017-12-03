@@ -29,7 +29,7 @@ public class Guest : MonoBehaviour
     public Bubble bubble;
     public SpriteRenderer emotionRdr;
     public Sprite[] rageEmotions;
-
+    public AudioClip maxRageSfx;
     public System.Action<Guest> onMaxRage;
 
     int _rage;
@@ -134,6 +134,7 @@ public class Guest : MonoBehaviour
             }
             Say(TalkType.PissedOff, () =>
             {
+                PlaySfx(transform.parent.parent, maxRageSfx);
                 gameObject.SetActive(false);
             });
         }
@@ -157,4 +158,14 @@ public class Guest : MonoBehaviour
 
         return candidates.list[Random.Range(0, candidates.list.Length)];
     }
+
+    void PlaySfx(Transform target, AudioClip clip)
+    {
+        var audioSrc = target.GetComponent<AudioSource>();
+        if (audioSrc != null && clip != null)
+        {
+            audioSrc.PlayOneShot(clip);
+        }
+    }
+
 }

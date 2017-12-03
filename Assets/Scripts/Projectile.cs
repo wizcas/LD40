@@ -28,6 +28,13 @@ public class Projectile : MonoBehaviour
     public AudioClip breakSfx;
     public AudioClip takenSfx;
 
+    void PlaySfx(Component target, AudioClip clip)
+    {
+        var audioSrc = target.GetComponent<AudioSource>();
+        if (audioSrc != null && clip != null)
+            audioSrc.PlayOneShot(clip);
+    }
+
     public void Fly(Vector3 from, Vector3 to, float height, float speed)
     {
         var delta = to - from;
@@ -46,13 +53,6 @@ public class Projectile : MonoBehaviour
         PlaySfx(this, flySfx);
     }
 
-    void PlaySfx(Component target, AudioClip clip)
-    {
-        var audioSrc = target.GetComponent<AudioSource>();
-        if (audioSrc != null && clip != null)
-            audioSrc.PlayOneShot(clip);
-    }
-    
     public void Break()
     {
         if (!Level.Instance.isOver)

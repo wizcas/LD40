@@ -308,6 +308,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: aa263fc3ad3bb374f9d6bc57d64bbb97, type: 3}
   - {fileID: 21300000, guid: 09ee6c2eda647134d861400a6b9b0060, type: 3}
   - {fileID: 21300000, guid: 95b6477af28c39741ab6989821c367d6, type: 3}
+  maxRageSfx: {fileID: 8300000, guid: 383c5c11e2cc6304f8882075fda8fef2, type: 3}
 --- !u!114 &114649472395242468
 MonoBehaviour:
   m_ObjectHideFlags: 1
