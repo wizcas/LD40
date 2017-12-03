@@ -6,7 +6,6 @@
 *****************************************************/
 
 using Cheers;
-using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,13 +17,15 @@ public class Guest : MonoBehaviour
     public Transform toPos;
     public float speed = 1f;
     public float height = .5f;
-    public Bubble bubble;
 
     [Header("Game Values")]
     public int initRage;
     public int maxRage;
     public int deltaDelight;
     public int deltaTemper;
+
+    [Header("Components")]
+    [SerializeField] Bubble bubble;
 
     public System.Action<Guest> onMaxRage;
 
@@ -35,61 +36,59 @@ public class Guest : MonoBehaviour
         get { return _rage; }
         private set
         {
+            var isHappy = value <= _rage;
             _rage = value;
-            OnRageChanged();
+            OnRageChanged(isHappy);
         }
     }
 
     [See]
+    public bool IsTalking { get { return bubble.IsTalking; } }
+
+    [See]
     public void Toss()
     {
-        if (fromPos == null)
-            fromPos = transform;
-        if (toPos == null)
-            toPos = Camera.main.transform;
-        var from = fromPos.position;
-        var to = toPos.position;
-        var delta = to - from;
-        var distance = delta.magnitude;
-        var proj = Instantiate(projPrefab, from, Quaternion.LookRotation(delta.normalized));
-        proj.owner = this;
-        DOTween.To(
-            t =>
+        bubble.Say(TalkType.AskForDrink,
+            () =>
             {
-                var step = (t + 1) * .5f;
-                var framePos = from + delta * step;
-                framePos.y = -(t * t) * height + height;
-                proj.transform.position = framePos;
-            },
-            -1, 1, distance / speed
-            );
-        bubble.Say(TalkType.AskForDrink);
+                if (fromPos == null)
+                    fromPos = transform;
+                if (toPos == null)
+                    toPos = Camera.main.transform;
+                var from = fromPos.position;
+                var to = toPos.position;                
+                var proj = Instantiate(projPrefab, from, Quaternion.identity);
+                proj.owner = this;
+                proj.Fly(from, to, height, speed);
+            });
     }
 
     public void OnTaken()
     {
         Rage -= deltaDelight;
-        bubble.Say(TalkType.Taken);
     }
 
     public void OnRefused()
     {
         Rage += deltaTemper;
-        bubble.Say(TalkType.Refused);
     }
 
-    void OnRageChanged()
+    void OnRageChanged(bool isHappy)
     {
         if (Rage >= maxRage)
         {
             if (onMaxRage != null)
             {
                 onMaxRage(this);
-                bubble.Say(TalkType.Leaving, () =>
-                {
-                    gameObject.SetActive(false);
-                });
             }
+            bubble.Say(TalkType.PissedOff, () =>
+            {
+                gameObject.SetActive(false);
+            });
+        }
+        else
+        {
+            bubble.Say(isHappy ? TalkType.Positive : TalkType.Negative);
         }
     }
 }

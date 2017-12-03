@@ -13,6 +13,17 @@ public class Level : Singleton<Level>
 {
     public int goalMoney;
     public float time;
+    public bool isOver;
+
+    private void Awake()
+    {
+        Init();
+    }
+
+    private void Init()
+    {
+        isOver = false;
+    }
 
     public void OnStatUpdated(PlayerStat stat)
     {
@@ -34,6 +45,8 @@ public class Level : Singleton<Level>
     }
 
     public void GameOver(GameEndType end) {
+        if (end > GameEndType.None)
+            isOver = true;
         PrettyLog.Log("Game Over: {0}", end);        
     }
 }

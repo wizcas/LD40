@@ -22,6 +22,23 @@ public class Projectile : MonoBehaviour
     public int refuseSantiy;
 
     public Guest owner;
+
+    public void Fly(Vector3 from, Vector3 to, float height, float speed)
+    {
+        var delta = to - from;
+        var distance = delta.magnitude;
+        transform.rotation = Quaternion.LookRotation(delta.normalized);
+        DOTween.To(
+            t =>
+            {
+                var step = (t + 1) * .5f;
+                var framePos = from + delta * step;
+                framePos.y = -(t * t) * height + height;
+                transform.position = framePos;
+            },
+            -1, 1, distance / speed
+            );
+    }
     
     public void Break()
     {

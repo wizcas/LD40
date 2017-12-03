@@ -28,6 +28,7 @@ public class BubbleManager : Singleton<BubbleManager>
     {
         _canvasSize = rectTransform.rect.size;
         SetBubblesZOrder();
+        SetBubblesPos(true);
     }
 
     void SetBubblesZOrder()
@@ -41,15 +42,20 @@ public class BubbleManager : Singleton<BubbleManager>
         }
     }
 
-    private void Update()
+    void SetBubblesPos(bool force)
     {
-        foreach(var bubble in bubbles)
+        foreach (var bubble in bubbles)
         {
-            if (bubble.gameObject.activeSelf)
+            if (bubble.gameObject.activeSelf || force)
             {
                 bubble.UpdatePos(_canvasSize);
             }
-        }        
+        }
+    }
+
+    private void Update()
+    {
+        SetBubblesPos(false);
     }    
 
     public string FindTalk(TalkType type)
@@ -66,9 +72,9 @@ public enum TalkType
 {
     None,
     AskForDrink,
-    Taken,
-    Refused,
-    Leaving
+    Positive,
+    Negative,
+    PissedOff
 }
 
 [System.Serializable]

@@ -5,6 +5,7 @@
 /* 2017 © All copyrights reserved by Wizcas Zhuo Chen
 *****************************************************/
 
+using Cheers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,11 +15,16 @@ public class Bubble : MonoBehaviour
 {
     public Text txtContent;
     public Transform worldPos;
+    public Image imgBubble;
+
+    [EnumArray(typeof(TalkType))] public Color[] talkTypeColors;
 
     public RectTransform rectTransform
     {
         get { return transform as RectTransform; }
     }
+
+    public bool IsTalking { get { return gameObject.activeSelf; } }
 
     Coroutine _hidingCoroutine;
 
@@ -42,15 +48,21 @@ public class Bubble : MonoBehaviour
 
     public void Say(TalkType type, System.Action onComplete = null)
     {
+        if (_hidingCoroutine != null)
+            StopCoroutine(_hidingCoroutine);
         if (type == TalkType.None)
         {
+            gameObject.SetActive(false);
             return;
         }
         var content = BubbleManager.Instance.FindTalk(type);
-        if (_hidingCoroutine != null)
-            StopCoroutine(_hidingCoroutine);
-        gameObject.SetActive(true);
+
         txtContent.text = content;
+        var color = talkTypeColors[(int)type];
+        if (color == Color.clear) color = Color.white;
+        imgBubble.color = color;
+        
+        gameObject.SetActive(true);
         _hidingCoroutine = StartCoroutine(SayCo(onComplete));
     }
 

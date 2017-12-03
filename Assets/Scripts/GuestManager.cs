@@ -70,6 +70,8 @@ public class GuestManager : MonoBehaviour
 
     void UpdateAction()
     {
+        if (Level.Instance.isOver) return;
+
         if(_guests.Count <= 0)
         {
             Level.Instance.GameOver(GameEndType.AllLeft);
@@ -87,10 +89,11 @@ public class GuestManager : MonoBehaviour
     void DoProject()
     {
         //PrettyLog.Log("<color=yellow>do project</color>");
+        var idleGuests = _guests.Where(g => !g.IsTalking);
         var pickedCount = Random.Range(0, _maxActorCount) + 1;
-        var totalCount = _guests.Count;
+        var totalCount = idleGuests.Count();
 
-        foreach(var actor in _guests)
+        foreach(var actor in idleGuests)
         {
             var poss = (float)pickedCount / totalCount;
             var rnd = Random.value;

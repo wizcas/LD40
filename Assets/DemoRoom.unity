@@ -310,11 +310,11 @@ MonoBehaviour:
   toPos: {fileID: 1327639549}
   speed: 0.6
   height: 0.5
-  bubble: {fileID: 991744730}
   initRage: 0
   maxRage: 10
   deltaDelight: 1
   deltaTemper: 2
+  bubble: {fileID: 991744730}
 --- !u!1 &451326987 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100010, guid: c2b9e38aaafdc5846947b8e7c0201491, type: 3}
@@ -368,7 +368,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: c2b9e38aaafdc5846947b8e7c0201491, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2b9e38aaafdc5846947b8e7c0201491, type: 3}
@@ -597,15 +597,15 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1319998194629998, guid: 9f074d851fa945d4db6b7401937e0865, type: 2}
-      propertyPath: m_Name
-      value: Bubble (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 114908723935702150, guid: 9f074d851fa945d4db6b7401937e0865,
         type: 2}
       propertyPath: worldPos
       value: 
       objectReference: {fileID: 2127992012}
+    - target: {fileID: 1319998194629998, guid: 9f074d851fa945d4db6b7401937e0865, type: 2}
+      propertyPath: m_Name
+      value: Bubble (4)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f074d851fa945d4db6b7401937e0865, type: 2}
   m_IsPrefabParent: 0
@@ -985,7 +985,7 @@ Prefab:
     - target: {fileID: 224813403282957762, guid: e70d7e3c769950246a2af80537d2e9eb,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 14
+      value: 64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e70d7e3c769950246a2af80537d2e9eb, type: 2}
@@ -1133,7 +1133,7 @@ GameObject:
   - component: {fileID: 1122871054}
   - component: {fileID: 1122871053}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1150,7 +1150,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1260179740}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1122871053
 MeshRenderer:
@@ -1403,11 +1403,11 @@ MonoBehaviour:
   toPos: {fileID: 1327639549}
   speed: 0.6
   height: 0.5
-  bubble: {fileID: 137063349}
   initRage: 0
   maxRage: 10
   deltaDelight: 1
   deltaTemper: 2
+  bubble: {fileID: 137063349}
 --- !u!1 &1260179739
 GameObject:
   m_ObjectHideFlags: 0
@@ -1434,8 +1434,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 601218268}
-  - {fileID: 1612189480}
   - {fileID: 1122871052}
+  - {fileID: 1612189480}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1586,11 +1586,11 @@ MonoBehaviour:
   toPos: {fileID: 1327639549}
   speed: 0.6
   height: 0.5
-  bubble: {fileID: 787997405}
   initRage: 0
   maxRage: 10
   deltaDelight: 1
   deltaTemper: 2
+  bubble: {fileID: 787997405}
 --- !u!4 &1612189480 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400006, guid: c2b9e38aaafdc5846947b8e7c0201491, type: 3}
@@ -1686,11 +1686,11 @@ MonoBehaviour:
   toPos: {fileID: 1327639549}
   speed: 0.6
   height: 0.5
-  bubble: {fileID: 817712626}
   initRage: 0
   maxRage: 10
   deltaDelight: 1
   deltaTemper: 2
+  bubble: {fileID: 817712626}
 --- !u!1 &1910378273
 GameObject:
   m_ObjectHideFlags: 0
@@ -1720,6 +1720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goalMoney: 2000
   time: 0
+  isOver: 0
 --- !u!4 &1910378275
 Transform:
   m_ObjectHideFlags: 0
@@ -1975,8 +1976,8 @@ MonoBehaviour:
   toPos: {fileID: 1327639549}
   speed: 0.6
   height: 0.5
-  bubble: {fileID: 755409545}
   initRage: 0
   maxRage: 10
   deltaDelight: 1
   deltaTemper: 2
+  bubble: {fileID: 755409545}
