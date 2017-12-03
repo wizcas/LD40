@@ -12,11 +12,11 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour 
 {
-    public GameObject takenScreen;
+    //public GameObject takenScreen;
 
     private void Start()
     {
-        takenScreen.gameObject.SetActive(false);
+        //takenScreen.gameObject.SetActive(false);
         Init();
     }
 
@@ -31,20 +31,6 @@ public class Player : MonoBehaviour
     void OnTake(Projectile projectile)
     {
         UpdateStat(projectile, true);
-        ShowShit(projectile);
-    }
-
-    void ShowShit(Projectile projectile)
-    {
-        StopCoroutine("ShowShitCo");
-        StartCoroutine(ShowShitCo());
-    }
-
-    IEnumerator ShowShitCo()
-    {
-        takenScreen.gameObject.SetActive(true);
-        yield return new WaitForSeconds(1f);
-        takenScreen.gameObject.SetActive(false);
     }
 
     void CheckRefuse(Vector3 screenPos)

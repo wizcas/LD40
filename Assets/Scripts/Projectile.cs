@@ -13,6 +13,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour 
 {
     public ParticleSystem breakFxPrefab;
+    public ParticleSystem takeFxPrefab;
 
     public int takenMoney;
     public int takenHealth;
@@ -49,6 +50,8 @@ public class Projectile : MonoBehaviour
 
     public void Take()
     {
+        Instantiate(takeFxPrefab);
+
         owner.OnTaken();
         Destroy(gameObject);
     }

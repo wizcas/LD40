@@ -242,7 +242,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5674faf3ad71040981761e45b60a14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breakFxPrefab: {fileID: 198112940913976510, guid: 7f7251863387fdd44983780e28186eae,
+  breakFxPrefab: {fileID: 198626602870587166, guid: ba6f6b35b97b49943a33d5b1dc2afc13,
+    type: 2}
+  takeFxPrefab: {fileID: 198978769800597972, guid: ada1ccac261c82846a7138a4eeff18ab,
     type: 2}
   takenMoney: 100
   takenHealth: -15
