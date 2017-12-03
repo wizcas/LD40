@@ -51,6 +51,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4242056686199884}
   - component: {fileID: 114393717294686384}
+  - component: {fileID: 95858996387883970}
   m_Layer: 0
   m_Name: GuestMan2
   m_TagString: Untagged
@@ -156,7 +157,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1416746143860094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.37, z: 1.028}
+  m_LocalPosition: {x: 0, y: -0.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4151005608893248}
@@ -219,6 +220,23 @@ Transform:
   m_Father: {fileID: 4242056686199884}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &95858996387883970
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1416746143860094}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c763539d27f9302489c507589e66b62d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114393717294686384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -230,16 +248,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87af3f70aff40274ebc63e5663da8c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projPrefab: {fileID: 0}
   fromPos: {fileID: 4340163675162900}
   toPos: {fileID: 0}
   speed: 0.7
-  height: 0.5
+  height: 0.3
   initRage: 0
   maxRage: 21
   deltaDelight: 2
   deltaTemper: 4
+  talks:
+  - list: []
+  - list:
+    - Am I your bro or not?
+    - Let's see the bottom!
+    - NEXT ROUND!
+  - list:
+    - That's what I'm talking about!
+    - Very descent, bro.
+    - Waghhhhahahahaha
+  - list:
+    - You have no balls.
+    - I'm gonna kick your ass!
+    - Stupid ****
+  - list:
+    - OK. You asked for it.
+  objectPrefabs:
+  - {fileID: 114383556929407830, guid: 6e0f61ee0bda1884f9a2361371b8f2f8, type: 2}
+  - {fileID: 114383556929407830, guid: 2132e314482c1a74cafb64d95df82f8f, type: 2}
   bubble: {fileID: 0}
+  emotionRdr: {fileID: 212706303920401162}
+  rageEmotions:
+  - {fileID: 21300000, guid: f4b9c08a7baf53043a3d54e42212efde, type: 3}
+  - {fileID: 21300000, guid: 3b714846d34c35b45977e9241a5075bb, type: 3}
+  - {fileID: 21300000, guid: 69a39bc3980a18545888b046cb6ad9d4, type: 3}
 --- !u!212 &212084875287752336
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -63,6 +63,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if (Level.Instance.isOver) return;
         if (Input.GetMouseButtonDown(0))
         {
             CheckRefuse(Input.mousePosition);

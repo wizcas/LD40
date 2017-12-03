@@ -12,6 +12,7 @@ using UnityEngine;
 
 public class GuestManager : MonoBehaviour 
 {
+    public Bubble[] seatBubbles;
     List<Guest> _guests;
     Camera _cam;
 
@@ -50,7 +51,6 @@ public class GuestManager : MonoBehaviour
 
     public float actionInterval = 1;
     public float startWait = 1f;
-    public Projectile[] alcoholPrefabs;
 
     float _nextActionTime;
     int _maxActorCount = 2;
@@ -58,9 +58,12 @@ public class GuestManager : MonoBehaviour
     void InitGuests()
     {
         _guests = this.GetComponentsInAllChildren<Guest>().ToList();
+        int index = 0;
         foreach(var guest in _guests)
         {
             guest.onMaxRage = OnMaxRage;
+            guest.bubble = seatBubbles[index];
+            index++;
         }
     }
 
@@ -102,7 +105,6 @@ public class GuestManager : MonoBehaviour
             {
                 //PrettyLog.Log("poss: {0}, rnd: {1}, pickedCount: {2}", poss, rnd, pickedCount);
                 pickedCount--;
-                actor.projPrefab = alcoholPrefabs[Random.Range(0, alcoholPrefabs.Length)];
                 actor.Toss();
                 if (pickedCount <= 0) return;
             }

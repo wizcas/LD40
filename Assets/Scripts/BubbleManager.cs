@@ -15,9 +15,7 @@ public class BubbleManager : Singleton<BubbleManager>
 {
     public Bubble[] bubbles;
     public float sayTime;
-
-    [EnumArray(typeof(TalkType))] public TalkList[] talks;
-
+    
     Vector2 _canvasSize;
     RectTransform rectTransform
     {
@@ -57,15 +55,6 @@ public class BubbleManager : Singleton<BubbleManager>
     {
         SetBubblesPos(false);
     }    
-
-    public string FindTalk(TalkType type)
-    {
-        var candidates = talks[(int)type];
-        if (candidates == null || candidates.list.Length == 0)
-            return "<color=red>(Blah Blah Blah)</color>";
-
-        return candidates.list[Random.Range(0, candidates.list.Length)];
-    }
 }
 
 public enum TalkType

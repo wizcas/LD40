@@ -46,7 +46,7 @@ public class Bubble : MonoBehaviour
         rectTransform.anchoredPosition = bubbleAnchorPos;
     }
 
-    public void Say(TalkType type, System.Action onComplete = null)
+    public void Say(TalkType type, string content, System.Action onComplete)
     {
         if (_hidingCoroutine != null)
             StopCoroutine(_hidingCoroutine);
@@ -55,7 +55,6 @@ public class Bubble : MonoBehaviour
             gameObject.SetActive(false);
             return;
         }
-        var content = BubbleManager.Instance.FindTalk(type);
 
         txtContent.text = content;
         var color = talkTypeColors[(int)type];

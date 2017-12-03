@@ -36,6 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4945617252802760}
   - component: {fileID: 114189088852051422}
+  - component: {fileID: 95882805638268548}
   m_Layer: 0
   m_Name: Hooker1
   m_TagString: Untagged
@@ -208,7 +209,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1346324866840618}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.43, z: 1.028}
+  m_LocalPosition: {x: 0, y: -0.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4501485787037250}
@@ -219,6 +220,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &95882805638268548
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1346324866840618}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c763539d27f9302489c507589e66b62d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114189088852051422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -230,16 +248,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87af3f70aff40274ebc63e5663da8c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projPrefab: {fileID: 0}
   fromPos: {fileID: 4058804236140770}
   toPos: {fileID: 0}
   speed: 0.8
-  height: 0.5
+  height: 0.3
   initRage: 0
   maxRage: 30
   deltaDelight: 6
   deltaTemper: 5
+  talks:
+  - list: []
+  - list:
+    - Will you take me out, handsome?
+    - I love the feel of your muscle.
+    - I've got a room upstairs...
+  - list:
+    - Come here...
+    - Call me~
+    - I'll see you in the girl's room
+  - list:
+    - Don't be a dick!
+    - Who do you think you are?
+    - Why are you doing this to me?
+  - list:
+    - I HATE YOU!
+  objectPrefabs:
+  - {fileID: 114705825876374396, guid: 786b9f0f0ac948145adabe7cd1d0ff60, type: 2}
   bubble: {fileID: 0}
+  emotionRdr: {fileID: 212718516092925054}
+  rageEmotions:
+  - {fileID: 21300000, guid: 413b2823e41cc454db95aac76d8de6d7, type: 3}
+  - {fileID: 21300000, guid: 081c91c1d80f3cf449b0ed538ef066cc, type: 3}
+  - {fileID: 21300000, guid: dd8cfbb6e6bd47b4ea878d335eafc0e2, type: 3}
 --- !u!212 &212277737466992486
 SpriteRenderer:
   m_ObjectHideFlags: 1

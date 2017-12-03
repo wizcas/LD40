@@ -244,12 +244,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breakFxPrefab: {fileID: 198112940913976510, guid: 7f7251863387fdd44983780e28186eae,
     type: 2}
-  takenMoney: 0
-  takenHealth: 0
-  takenSanity: 0
+  takenMoney: 100
+  takenHealth: -15
+  takenSanity: -10
   refuseMoney: 0
-  refuseHealth: 0
-  refuseSantiy: 0
+  refuseHealth: 20
+  refuseSantiy: 5
   owner: {fileID: 0}
 --- !u!114 &114968598712221290
 MonoBehaviour:

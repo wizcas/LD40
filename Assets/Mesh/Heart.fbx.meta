@@ -1,44 +1,21 @@
 fileFormatVersion: 2
-guid: c2b9e38aaafdc5846947b8e7c0201491
-timeCreated: 1512198857
+guid: d74cc1e88a275c344b1b7206307167df
+timeCreated: 1512299489
 licenseType: Pro
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Camera
-    100002: Cylinder
-    100004: Cylinder.001
-    100006: //RootNode
-    100008: Lamp
-    100010: Spinner
-    100012: Table
-    400000: Camera
-    400002: Cylinder
-    400004: Cylinder.001
-    400006: //RootNode
-    400008: Lamp
-    400010: Spinner
-    400012: Table
-    2000000: Camera
-    2300000: Cylinder
-    2300002: Cylinder.001
-    2300004: Spinner
-    2300006: Table
-    3300000: Cylinder
-    3300002: Cylinder.001
-    3300004: Spinner
-    3300006: Table
-    4300000: Cylinder.001
-    4300002: Cylinder
-    4300004: Spinner
-    4300006: Table
-    10800000: Lamp
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cube
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: 6398b8498dee2ad468ee7a4a3f673d47, type: 2}
+      name: Material
+    second: {fileID: 2100000, guid: 5232fd3ff678ff84ab07d696454150f3, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -68,15 +45,15 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.15
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
