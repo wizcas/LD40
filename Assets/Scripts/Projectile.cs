@@ -24,6 +24,10 @@ public class Projectile : MonoBehaviour
 
     public Guest owner;
 
+    public AudioClip flySfx;
+    public AudioClip breakSfx;
+    public AudioClip takenSfx;
+
     public void Fly(Vector3 from, Vector3 to, float height, float speed)
     {
         var delta = to - from;
@@ -39,20 +43,35 @@ public class Projectile : MonoBehaviour
             },
             -1, 1, distance / speed
             );
+        PlaySfx(this, flySfx);
+    }
+
+    void PlaySfx(Component target, AudioClip clip)
+    {
+        var audioSrc = target.GetComponent<AudioSource>();
+        if (audioSrc != null && clip != null)
+            audioSrc.PlayOneShot(clip);
     }
     
     public void Break()
     {
-        Instantiate(breakFxPrefab, transform.position, Quaternion.identity);
-        owner.OnRefused();
+        if (!Level.Instance.isOver)
+        {
+            var fx = Instantiate(breakFxPrefab, transform.position, Quaternion.identity);
+            PlaySfx(fx, breakSfx);
+            owner.OnRefused();
+        }
         Destroy(gameObject);
     }
 
     public void Take()
     {
-        Instantiate(takeFxPrefab);
-
-        owner.OnTaken();
+        if (!Level.Instance.isOver)
+        {
+            var fx = Instantiate(takeFxPrefab);
+            PlaySfx(fx, takenSfx);
+            owner.OnTaken();
+        }
         Destroy(gameObject);
     }
 }

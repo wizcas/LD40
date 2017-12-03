@@ -26,7 +26,7 @@ public class StatBar : UIBehaviour
 
     protected override void Start()
     {
-        goalMoney.text = Level.Instance.goalMoney.ToString();        
+        goalMoney.text = string.Format("GOAL: {0}", Level.Instance.goalMoney);
     }
 
     public void OnStatUpdated(PlayerStat stat)

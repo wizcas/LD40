@@ -16,11 +16,11 @@ public class StatTip : MonoBehaviour
 {
     public Text txtLevel;
     public int[] levelMinValues = new int[] { 0, 10, 20 };
-    
+    public AudioClip upSfx;
+    public AudioClip downSfx;
 
     public Tween Spawn(int value, Vector2 ancPos, float delay)
     {
-        PrettyLog.Log("tip pos, {0}", ancPos);
         int level = FindLevel(value);
         if(level <= 0)
         {
@@ -39,7 +39,13 @@ public class StatTip : MonoBehaviour
         var rt = transform as RectTransform;
         rt.anchoredPosition = ancPos;
         return DOTween.Sequence().SetDelay(delay)
-            .AppendCallback(()=>cgrp.alpha = 1)
+            .AppendCallback(()=> {
+                cgrp.alpha = 1;
+                var audioSrc = GetComponent<AudioSource>();
+                var sfx = value > 0 ? upSfx : downSfx;
+                if (audioSrc != null && sfx != null)
+                    audioSrc.PlayOneShot(sfx);
+                })
             .Append(rt.DOAnchorPosY(rt.anchoredPosition.y + 200, 1f).SetEase(Ease.OutCubic))
             .Insert(.8f, cgrp.DOFade(0, .2f))
             .OnComplete(() => Destroy(gameObject));

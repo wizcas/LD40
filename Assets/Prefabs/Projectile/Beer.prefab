@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 114968598712221290}
   - component: {fileID: 136240784916294690}
   - component: {fileID: 54538711254873952}
+  - component: {fileID: 82632505537672840}
   m_Layer: 8
   m_Name: Beer
   m_TagString: Untagged
@@ -231,6 +232,87 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!82 &82632505537672840
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1396972783642292}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243849688036975190, guid: 1a26cff4d8a54af47aa0310afb5df55c,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114383556929407830
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -253,6 +335,9 @@ MonoBehaviour:
   refuseHealth: 20
   refuseSantiy: 5
   owner: {fileID: 0}
+  flySfx: {fileID: 8300000, guid: f3eb5408f88deed438ed15b8e1b05929, type: 3}
+  breakSfx: {fileID: 8300000, guid: 5ee095abd0482804d9472ea291a1c16e, type: 3}
+  takenSfx: {fileID: 8300000, guid: 2811d46fafbd2734d8b2214fa0d20061, type: 3}
 --- !u!114 &114968598712221290
 MonoBehaviour:
   m_ObjectHideFlags: 1
