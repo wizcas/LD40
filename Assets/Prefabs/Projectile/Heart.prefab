@@ -157,7 +157,7 @@ MonoBehaviour:
     type: 2}
   takeFxPrefab: {fileID: 198470639788613314, guid: 2154beb9782c1f24c8dabeab05bd497a,
     type: 2}
-  takenMoney: -100
+  takenMoney: -50
   takenHealth: 30
   takenSanity: -20
   refuseMoney: 0

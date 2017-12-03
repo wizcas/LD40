@@ -248,7 +248,7 @@ MonoBehaviour:
     type: 2}
   takenMoney: 100
   takenHealth: -15
-  takenSanity: -10
+  takenSanity: -5
   refuseMoney: 0
   refuseHealth: 20
   refuseSantiy: 5

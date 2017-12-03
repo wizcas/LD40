@@ -278,7 +278,7 @@ MonoBehaviour:
   fromPos: {fileID: 4969442707129598}
   toPos: {fileID: 0}
   speed: 0.5
-  height: 0.3
+  height: 0.4
   initRage: 0
   maxRage: 20
   deltaDelight: 4

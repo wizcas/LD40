@@ -16,6 +16,7 @@ public class Bubble : MonoBehaviour
     public Text txtContent;
     public Transform worldPos;
     public Image imgBubble;
+    public Vector2 offset;
 
     [EnumArray(typeof(TalkType))] public Color[] talkTypeColors;
 
@@ -35,7 +36,7 @@ public class Bubble : MonoBehaviour
 
     public void UpdatePos(Vector2 areaSize)
     {
-        var bubbleVP = Camera.main.WorldToViewportPoint(worldPos.position);
+        var bubbleVP = Camera.main.WorldToViewportPoint(worldPos.position + offset.ToVector3());
         var bubbleSize = rectTransform.rect.size;
         var max = (areaSize - bubbleSize) * .5f;
         var min = -max;

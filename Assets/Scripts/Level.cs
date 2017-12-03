@@ -46,6 +46,7 @@ public class Level : Singleton<Level>
     }
 
     public void GameOver(GameEndType end) {
+        if (isOver) return;
         if (end > GameEndType.None)
             isOver = true;
         PrettyLog.Log("Game Over: {0}", end);

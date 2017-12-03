@@ -93,6 +93,7 @@ MonoBehaviour:
   txtContent: {fileID: 114472421204361798}
   worldPos: {fileID: 0}
   imgBubble: {fileID: 114986834677114540}
+  offset: {x: 0, y: 1}
   talkTypeColors:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 1, g: 1, b: 1, a: 0.78431374}
