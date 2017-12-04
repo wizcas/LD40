@@ -33,7 +33,8 @@ public class Tutorial : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(2);
+            //SceneManager.LoadScene(2);
+            RoomLoader.Instance.LoadRoom();
         }        
     }
 }

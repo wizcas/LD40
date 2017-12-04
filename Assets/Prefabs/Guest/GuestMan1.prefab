@@ -280,8 +280,8 @@ MonoBehaviour:
   speed: 0.5
   height: 0.4
   initRage: 0
-  maxRage: 20
-  deltaDelight: 4
+  maxRage: 30
+  deltaDelight: 5
   deltaTemper: 4
   talks:
   - list: []

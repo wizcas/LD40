@@ -66,8 +66,10 @@ AudioMixerSnapshotController:
     a465a4815ff21b645bfcfb03507a8d71: 10
     b34028b2527a78d449a8f0f4fcdab9d3: 127
     fc8cc883b70e2ff47b8b10e2d6e8eb91: 0
+    2374b4358fbb2a24f81fd56dcacc0b70: 0
+    f1f447f6e3be9ea4194817d37cac8d0d: 0
     d4605d7870d140b4a8b98fa69a75125d: -10
-    50a46fcaf6bbe3b47a6e0312f3d91ec4: -15
+    50a46fcaf6bbe3b47a6e0312f3d91ec4: -25
     1a8675cba3f8b124280d1a2ab11d70ee: 0.1
     4f703fac9a3d6fc448bc2d4498519556: 10
   m_TransitionOverrides: {}
@@ -76,7 +78,7 @@ AudioMixerGroupController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: New Group
+  m_Name: SFX
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 66a501ae43e0967498bfda458da1d74b
   m_Children: []

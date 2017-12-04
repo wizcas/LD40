@@ -269,7 +269,7 @@ MonoBehaviour:
   speed: 0.7
   height: 0.4
   initRage: 0
-  maxRage: 21
+  maxRage: 16
   deltaDelight: 2
   deltaTemper: 4
   talks:
@@ -281,7 +281,7 @@ MonoBehaviour:
   - list:
     - That's what I'm talking about!
     - Very descent, bro.
-    - Waghhhhahahahaha
+    - Waghhh-ha-ha-ha-ha-ha
   - list:
     - You have no balls.
     - I'm gonna kick your ass!

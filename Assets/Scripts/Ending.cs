@@ -42,6 +42,7 @@ public class Ending : MonoBehaviour
 
     public void Show(GameEndType end)
     {
+        Time.timeScale = 0;
         Clear();
         gameObject.SetActive(true);
         GameObject endingObj = null;
@@ -91,7 +92,9 @@ public class Ending : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        RoomLoader.Instance.LoadRoom();
     }
 
     [FlagEnum] public GameEndType testType;

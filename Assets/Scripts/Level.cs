@@ -15,6 +15,7 @@ public class Level : Singleton<Level>
     public float time;
     public bool isOver;
     public Ending ending;
+    public GameMenu menu;
 
     private void Awake()
     {
@@ -24,6 +25,7 @@ public class Level : Singleton<Level>
     private void Init()
     {
         isOver = false;
+        menu.gameObject.SetActive(false);
     }
 
     public void OnStatUpdated(PlayerStat stat)
@@ -51,6 +53,18 @@ public class Level : Singleton<Level>
             isOver = true;
         PrettyLog.Log("Game Over: {0}", end);
         ending.Show(end);
+    }
+
+    private void Update()
+    {
+        if (isOver) return;
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (menu.IsShown)
+                menu.Back();
+            else
+                menu.Show();
+        }
     }
 }
 
