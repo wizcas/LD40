@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 336eb57e86ae2e74998b66dd9f4df2f9
-timeCreated: 1512278919
+guid: b06023b85517d7c48910d9ab09b02eb9
+timeCreated: 1512341161
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName: {}
@@ -84,7 +84,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: WebGL
-    maxTextureSize: 256
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: 10
     textureCompression: 1

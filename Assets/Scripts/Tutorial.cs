@@ -33,7 +33,7 @@ public class Tutorial : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("Room");
+            SceneManager.LoadScene(2);
         }        
     }
 }
